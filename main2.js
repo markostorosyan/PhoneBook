@@ -20,36 +20,15 @@ class User {
     }
 }
 
-/* 
-How to add user
-
-in conlose write node main2.js --add userName userSurName userPhoneNumber userAddress;
-
-*/
-
 if(process.argv[2] === "--add") {
     createUser(process.argv[3],process.argv[4], process.argv[5], process.argv[6])
     fs.writeFileSync("./phoneBook2.txt", toStr(userArray))
 }
 
-/* 
-How to edit user
-
-in conlose write node main2.js --edit userId userName userSurName userPhoneNumber userAddress;
-
-*/
-
 if(process.argv[2] === "--edit") {
     editUser(process.argv[3], process.argv[4], process.argv[5], process.argv[6], process.argv[7])
     fs.writeFileSync("./phoneBook2.txt", toStr(userArray))
 }
-
-/* 
-How to delete user
-
-in conlose write node main2.js --del userId;
-
-*/
 
 if(process.argv[2] === "--del") {
     deleteUser(process.argv[3]);
@@ -64,13 +43,6 @@ function toPars (arr) {
 }
 
 function createUser (name, surName, phoneNumber, address) {
-    // if (userArray.length === 0){
-    //     userId = 1;
-    // } else {
-    //     userArray.forEach((val) => {
-    //         userId = val._id + 1
-    //     });
-    // }
 
     if(userArray.length === 0) {
         userId = 1;
